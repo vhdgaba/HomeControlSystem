@@ -54,7 +54,7 @@
       <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
     </References>
   </UAObjectType>
-  <UAVariable NodeId="ns=1;i=2" BrowseName="1:Output" ParentNodeId="ns=1;i=1" DataType="Double">
+  <UAVariable NodeId="ns=1;i=2" BrowseName="1:Output" ParentNodeId="ns=1;i=1" DataType="Double" AccessLevel="3" Historizing="true">
     <DisplayName>Output</DisplayName>
     <References>
       <Reference ReferenceType="HasProperty">ns=1;i=6</Reference>
@@ -79,17 +79,476 @@
       <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1</Reference>
     </References>
   </UAVariable>
+  <UAObjectType NodeId="ns=1;i=491" BrowseName="1:TemperatureCriticalType">
+    <DisplayName>TemperatureCriticalType</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=492</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=493</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=494</Reference>
+      <Reference ReferenceType="HasSubtype" IsForward="false">i=10523</Reference>
+    </References>
+  </UAObjectType>
+  <UAVariable NodeId="ns=1;i=492" BrowseName="1:IsAveragePerMonth" ParentNodeId="ns=1;i=491" DataType="Boolean">
+    <DisplayName>IsAveragePerMonth</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=491</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=493" BrowseName="1:MyName" ParentNodeId="ns=1;i=491" DataType="String">
+    <DisplayName>MyName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=491</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=494" BrowseName="1:MyNumber" ParentNodeId="ns=1;i=491" DataType="Double">
+    <DisplayName>MyNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=491</Reference>
+    </References>
+  </UAVariable>
   <UAObjectType NodeId="ns=1;i=9" BrowseName="1:TemperatureSensorType">
     <DisplayName>TemperatureSensorType</DisplayName>
     <Description>A sensor that reports the temperature of a measured object.</Description>
     <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=44</Reference>
+      <Reference ReferenceType="HasNotifier">ns=1;i=44</Reference>
       <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;i=1</Reference>
     </References>
   </UAObjectType>
+  <UAObject NodeId="ns=1;i=44" BrowseName="1:TempCritical" SymbolicName="TemperatureCritical" ParentNodeId="ns=1;i=9">
+    <DisplayName>TempCritical</DisplayName>
+    <Description>Critical conditon of the temperature.</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=47</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=48</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=49</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=50</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=51</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=52</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=54</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=55</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=56</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=57</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=60</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=61</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=62</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=63</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=72</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=74</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=76</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=78</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=79</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=80</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=81</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=83</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=101</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=105</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=114</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=152</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=476</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=479</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=480</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=491</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=9</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=47" BrowseName="EventId" ParentNodeId="ns=1;i=44" DataType="ByteString">
+    <DisplayName>EventId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=48" BrowseName="EventType" ParentNodeId="ns=1;i=44" DataType="NodeId">
+    <DisplayName>EventType</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=49" BrowseName="SourceNode" ParentNodeId="ns=1;i=44" DataType="NodeId">
+    <DisplayName>SourceNode</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=50" BrowseName="SourceName" ParentNodeId="ns=1;i=44" DataType="String">
+    <DisplayName>SourceName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=51" BrowseName="Time" ParentNodeId="ns=1;i=44" DataType="i=294">
+    <DisplayName>Time</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=52" BrowseName="ReceiveTime" ParentNodeId="ns=1;i=44" DataType="i=294">
+    <DisplayName>ReceiveTime</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=54" BrowseName="Message" ParentNodeId="ns=1;i=44" DataType="LocalizedText">
+    <DisplayName>Message</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=55" BrowseName="Severity" ParentNodeId="ns=1;i=44" DataType="UInt16">
+    <DisplayName>Severity</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=56" BrowseName="ConditionClassId" ParentNodeId="ns=1;i=44" DataType="NodeId">
+    <DisplayName>ConditionClassId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=57" BrowseName="ConditionClassName" ParentNodeId="ns=1;i=44" DataType="LocalizedText">
+    <DisplayName>ConditionClassName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=60" BrowseName="ConditionName" ParentNodeId="ns=1;i=44" DataType="String">
+    <DisplayName>ConditionName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=61" BrowseName="BranchId" ParentNodeId="ns=1;i=44" DataType="NodeId">
+    <DisplayName>BranchId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=62" BrowseName="Retain" ParentNodeId="ns=1;i=44" DataType="Boolean">
+    <DisplayName>Retain</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=63" BrowseName="EnabledState" ParentNodeId="ns=1;i=44" DataType="LocalizedText">
+    <DisplayName>EnabledState</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=64</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=8995</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=64" BrowseName="Id" ParentNodeId="ns=1;i=63" DataType="Boolean">
+    <DisplayName>Id</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=63</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=72" BrowseName="Quality" ParentNodeId="ns=1;i=44" DataType="StatusCode">
+    <DisplayName>Quality</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=73</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=9002</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=73" BrowseName="SourceTimestamp" ParentNodeId="ns=1;i=72" DataType="i=294">
+    <DisplayName>SourceTimestamp</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=72</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=74" BrowseName="LastSeverity" ParentNodeId="ns=1;i=44" DataType="UInt16">
+    <DisplayName>LastSeverity</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=75</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=9002</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=75" BrowseName="SourceTimestamp" ParentNodeId="ns=1;i=74" DataType="i=294">
+    <DisplayName>SourceTimestamp</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=74</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=76" BrowseName="Comment" ParentNodeId="ns=1;i=44" DataType="LocalizedText">
+    <DisplayName>Comment</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=77</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=9002</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=77" BrowseName="SourceTimestamp" ParentNodeId="ns=1;i=76" DataType="i=294">
+    <DisplayName>SourceTimestamp</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=76</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=78" BrowseName="ClientUserId" ParentNodeId="ns=1;i=44" DataType="String">
+    <DisplayName>ClientUserId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAMethod NodeId="ns=1;i=79" BrowseName="Disable" ParentNodeId="ns=1;i=44" MethodDeclarationId="i=9028">
+    <DisplayName>Disable</DisplayName>
+    <References>
+      <Reference ReferenceType="i=3065">i=2803</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=80" BrowseName="Enable" ParentNodeId="ns=1;i=44" MethodDeclarationId="i=9027">
+    <DisplayName>Enable</DisplayName>
+    <References>
+      <Reference ReferenceType="i=3065">i=2803</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=81" BrowseName="AddComment" ParentNodeId="ns=1;i=44" MethodDeclarationId="i=9029">
+    <DisplayName>AddComment</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=82</Reference>
+      <Reference ReferenceType="i=3065">i=2829</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAMethod>
+  <UAVariable NodeId="ns=1;i=82" BrowseName="InputArguments" ParentNodeId="ns=1;i=81" DataType="i=296" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>InputArguments</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=81</Reference>
+    </References>
+    <Value>
+      <ListOfExtensionObject xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>EventId</Name>
+              <DataType>
+                <Identifier>i=15</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+              <Description>
+                <Text>The identifier for the event to comment.</Text>
+              </Description>
+            </Argument>
+          </Body>
+        </ExtensionObject>
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>Comment</Name>
+              <DataType>
+                <Identifier>i=21</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+              <Description>
+                <Text>The comment to add to the condition.</Text>
+              </Description>
+            </Argument>
+          </Body>
+        </ExtensionObject>
+      </ListOfExtensionObject>
+    </Value>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=83" BrowseName="AckedState" ParentNodeId="ns=1;i=44" DataType="LocalizedText">
+    <DisplayName>AckedState</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=84</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=8995</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=84" BrowseName="Id" ParentNodeId="ns=1;i=83" DataType="Boolean">
+    <DisplayName>Id</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=83</Reference>
+    </References>
+  </UAVariable>
+  <UAMethod NodeId="ns=1;i=101" BrowseName="Acknowledge" ParentNodeId="ns=1;i=44" MethodDeclarationId="i=9111">
+    <DisplayName>Acknowledge</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=102</Reference>
+      <Reference ReferenceType="i=3065">i=8944</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAMethod>
+  <UAVariable NodeId="ns=1;i=102" BrowseName="InputArguments" ParentNodeId="ns=1;i=101" DataType="i=296" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>InputArguments</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=101</Reference>
+    </References>
+    <Value>
+      <ListOfExtensionObject xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>EventId</Name>
+              <DataType>
+                <Identifier>i=15</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+              <Description>
+                <Text>The identifier for the event to comment.</Text>
+              </Description>
+            </Argument>
+          </Body>
+        </ExtensionObject>
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>Comment</Name>
+              <DataType>
+                <Identifier>i=21</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+              <Description>
+                <Text>The comment to add to the condition.</Text>
+              </Description>
+            </Argument>
+          </Body>
+        </ExtensionObject>
+      </ListOfExtensionObject>
+    </Value>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=105" BrowseName="ActiveState" ParentNodeId="ns=1;i=44" DataType="LocalizedText">
+    <DisplayName>ActiveState</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=106</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=8995</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=106" BrowseName="Id" ParentNodeId="ns=1;i=105" DataType="Boolean">
+    <DisplayName>Id</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=105</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=114" BrowseName="InputNode" ParentNodeId="ns=1;i=44" DataType="NodeId">
+    <DisplayName>InputNode</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=152" BrowseName="SuppressedOrShelved" ParentNodeId="ns=1;i=44" DataType="Boolean">
+    <DisplayName>SuppressedOrShelved</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=476" BrowseName="1:IsAveragePerMonth" ParentNodeId="ns=1;i=44" DataType="Boolean">
+    <DisplayName>IsAveragePerMonth</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=479" BrowseName="1:MyName" ParentNodeId="ns=1;i=44" DataType="String">
+    <DisplayName>MyName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=480" BrowseName="1:MyNumber" ParentNodeId="ns=1;i=44" DataType="Double">
+    <DisplayName>MyNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=44</Reference>
+    </References>
+  </UAVariable>
   <UAObjectType NodeId="ns=1;i=17" BrowseName="1:HomeControlSystemType">
     <DisplayName>HomeControlSystemType</DisplayName>
     <References>
       <Reference ReferenceType="HasComponent">ns=1;i=18</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=642</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=679</Reference>
       <Reference ReferenceType="HasNotifier">ns=1;i=18</Reference>
       <Reference ReferenceType="HasSubtype" IsForward="false">i=61</Reference>
     </References>
@@ -99,12 +558,13 @@
     <References>
       <Reference ReferenceType="HasComponent">ns=1;i=19</Reference>
       <Reference ReferenceType="HasProperty">ns=1;i=25</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=45</Reference>
       <Reference ReferenceType="HasTypeDefinition">ns=1;i=9</Reference>
       <Reference ReferenceType="HasModellingRule">i=78</Reference>
       <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=17</Reference>
     </References>
   </UAObject>
-  <UAVariable NodeId="ns=1;i=19" BrowseName="1:Output" ParentNodeId="ns=1;i=18" DataType="Double">
+  <UAVariable NodeId="ns=1;i=19" BrowseName="1:Output" ParentNodeId="ns=1;i=18" DataType="Double" AccessLevel="3" Historizing="true">
     <DisplayName>Output</DisplayName>
     <References>
       <Reference ReferenceType="HasProperty">ns=1;i=23</Reference>
@@ -129,10 +589,999 @@
       <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=18</Reference>
     </References>
   </UAVariable>
+  <UAObject NodeId="ns=1;i=45" BrowseName="1:TempCritical" SymbolicName="TemperatureCritical" ParentNodeId="ns=1;i=18">
+    <DisplayName>TempCritical</DisplayName>
+    <Description>Critical conditon of the temperature.</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=189</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=190</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=191</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=192</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=193</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=194</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=196</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=197</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=198</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=199</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=202</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=203</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=204</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=205</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=214</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=216</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=218</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=220</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=221</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=222</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=223</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=225</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=243</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=247</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=256</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=294</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=477</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=481</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=482</Reference>
+      <Reference ReferenceType="HasNotifier" IsForward="false">ns=1;i=18</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=491</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=18</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=189" BrowseName="EventId" ParentNodeId="ns=1;i=45" DataType="ByteString">
+    <DisplayName>EventId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=190" BrowseName="EventType" ParentNodeId="ns=1;i=45" DataType="NodeId">
+    <DisplayName>EventType</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=191" BrowseName="SourceNode" ParentNodeId="ns=1;i=45" DataType="NodeId">
+    <DisplayName>SourceNode</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=192" BrowseName="SourceName" ParentNodeId="ns=1;i=45" DataType="String">
+    <DisplayName>SourceName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=193" BrowseName="Time" ParentNodeId="ns=1;i=45" DataType="i=294">
+    <DisplayName>Time</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=194" BrowseName="ReceiveTime" ParentNodeId="ns=1;i=45" DataType="i=294">
+    <DisplayName>ReceiveTime</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=196" BrowseName="Message" ParentNodeId="ns=1;i=45" DataType="LocalizedText">
+    <DisplayName>Message</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=197" BrowseName="Severity" ParentNodeId="ns=1;i=45" DataType="UInt16">
+    <DisplayName>Severity</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=198" BrowseName="ConditionClassId" ParentNodeId="ns=1;i=45" DataType="NodeId">
+    <DisplayName>ConditionClassId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=199" BrowseName="ConditionClassName" ParentNodeId="ns=1;i=45" DataType="LocalizedText">
+    <DisplayName>ConditionClassName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=202" BrowseName="ConditionName" ParentNodeId="ns=1;i=45" DataType="String">
+    <DisplayName>ConditionName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=203" BrowseName="BranchId" ParentNodeId="ns=1;i=45" DataType="NodeId">
+    <DisplayName>BranchId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=204" BrowseName="Retain" ParentNodeId="ns=1;i=45" DataType="Boolean">
+    <DisplayName>Retain</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=205" BrowseName="EnabledState" ParentNodeId="ns=1;i=45" DataType="LocalizedText">
+    <DisplayName>EnabledState</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=206</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=8995</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=206" BrowseName="Id" ParentNodeId="ns=1;i=205" DataType="Boolean">
+    <DisplayName>Id</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=205</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=214" BrowseName="Quality" ParentNodeId="ns=1;i=45" DataType="StatusCode">
+    <DisplayName>Quality</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=215</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=9002</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=215" BrowseName="SourceTimestamp" ParentNodeId="ns=1;i=214" DataType="i=294">
+    <DisplayName>SourceTimestamp</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=214</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=216" BrowseName="LastSeverity" ParentNodeId="ns=1;i=45" DataType="UInt16">
+    <DisplayName>LastSeverity</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=217</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=9002</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=217" BrowseName="SourceTimestamp" ParentNodeId="ns=1;i=216" DataType="i=294">
+    <DisplayName>SourceTimestamp</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=216</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=218" BrowseName="Comment" ParentNodeId="ns=1;i=45" DataType="LocalizedText">
+    <DisplayName>Comment</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=219</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=9002</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=219" BrowseName="SourceTimestamp" ParentNodeId="ns=1;i=218" DataType="i=294">
+    <DisplayName>SourceTimestamp</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=218</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=220" BrowseName="ClientUserId" ParentNodeId="ns=1;i=45" DataType="String">
+    <DisplayName>ClientUserId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAMethod NodeId="ns=1;i=221" BrowseName="Disable" ParentNodeId="ns=1;i=45" MethodDeclarationId="i=9028">
+    <DisplayName>Disable</DisplayName>
+    <References>
+      <Reference ReferenceType="i=3065">i=2803</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=222" BrowseName="Enable" ParentNodeId="ns=1;i=45" MethodDeclarationId="i=9027">
+    <DisplayName>Enable</DisplayName>
+    <References>
+      <Reference ReferenceType="i=3065">i=2803</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=223" BrowseName="AddComment" ParentNodeId="ns=1;i=45" MethodDeclarationId="i=9029">
+    <DisplayName>AddComment</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=224</Reference>
+      <Reference ReferenceType="i=3065">i=2829</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAMethod>
+  <UAVariable NodeId="ns=1;i=224" BrowseName="InputArguments" ParentNodeId="ns=1;i=223" DataType="i=296" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>InputArguments</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=223</Reference>
+    </References>
+    <Value>
+      <ListOfExtensionObject xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>EventId</Name>
+              <DataType>
+                <Identifier>i=15</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+              <Description>
+                <Text>The identifier for the event to comment.</Text>
+              </Description>
+            </Argument>
+          </Body>
+        </ExtensionObject>
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>Comment</Name>
+              <DataType>
+                <Identifier>i=21</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+              <Description>
+                <Text>The comment to add to the condition.</Text>
+              </Description>
+            </Argument>
+          </Body>
+        </ExtensionObject>
+      </ListOfExtensionObject>
+    </Value>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=225" BrowseName="AckedState" ParentNodeId="ns=1;i=45" DataType="LocalizedText">
+    <DisplayName>AckedState</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=226</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=8995</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=226" BrowseName="Id" ParentNodeId="ns=1;i=225" DataType="Boolean">
+    <DisplayName>Id</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=225</Reference>
+    </References>
+  </UAVariable>
+  <UAMethod NodeId="ns=1;i=243" BrowseName="Acknowledge" ParentNodeId="ns=1;i=45" MethodDeclarationId="i=9111">
+    <DisplayName>Acknowledge</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=244</Reference>
+      <Reference ReferenceType="i=3065">i=8944</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAMethod>
+  <UAVariable NodeId="ns=1;i=244" BrowseName="InputArguments" ParentNodeId="ns=1;i=243" DataType="i=296" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>InputArguments</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=243</Reference>
+    </References>
+    <Value>
+      <ListOfExtensionObject xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>EventId</Name>
+              <DataType>
+                <Identifier>i=15</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+              <Description>
+                <Text>The identifier for the event to comment.</Text>
+              </Description>
+            </Argument>
+          </Body>
+        </ExtensionObject>
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>Comment</Name>
+              <DataType>
+                <Identifier>i=21</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+              <Description>
+                <Text>The comment to add to the condition.</Text>
+              </Description>
+            </Argument>
+          </Body>
+        </ExtensionObject>
+      </ListOfExtensionObject>
+    </Value>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=247" BrowseName="ActiveState" ParentNodeId="ns=1;i=45" DataType="LocalizedText">
+    <DisplayName>ActiveState</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=248</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=8995</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=248" BrowseName="Id" ParentNodeId="ns=1;i=247" DataType="Boolean">
+    <DisplayName>Id</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=247</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=256" BrowseName="InputNode" ParentNodeId="ns=1;i=45" DataType="NodeId">
+    <DisplayName>InputNode</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=294" BrowseName="SuppressedOrShelved" ParentNodeId="ns=1;i=45" DataType="Boolean">
+    <DisplayName>SuppressedOrShelved</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=477" BrowseName="1:IsAveragePerMonth" ParentNodeId="ns=1;i=45" DataType="Boolean">
+    <DisplayName>IsAveragePerMonth</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=481" BrowseName="1:MyName" ParentNodeId="ns=1;i=45" DataType="String">
+    <DisplayName>MyName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=482" BrowseName="1:MyNumber" ParentNodeId="ns=1;i=45" DataType="Double">
+    <DisplayName>MyNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=45</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=642" BrowseName="1:NormalCondition" ParentNodeId="ns=1;i=17">
+    <DisplayName>NormalCondition</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=643</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=644</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=645</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=646</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=647</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=648</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=650</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=651</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=652</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=653</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=656</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=657</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=658</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=659</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=668</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=670</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=672</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=674</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=675</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=676</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=677</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2782</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=17</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=643" BrowseName="EventId" ParentNodeId="ns=1;i=642" DataType="ByteString">
+    <DisplayName>EventId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=642</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=644" BrowseName="EventType" ParentNodeId="ns=1;i=642" DataType="NodeId">
+    <DisplayName>EventType</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=642</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=645" BrowseName="SourceNode" ParentNodeId="ns=1;i=642" DataType="NodeId">
+    <DisplayName>SourceNode</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=642</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=646" BrowseName="SourceName" ParentNodeId="ns=1;i=642" DataType="String">
+    <DisplayName>SourceName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=642</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=647" BrowseName="Time" ParentNodeId="ns=1;i=642" DataType="i=294">
+    <DisplayName>Time</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=642</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=648" BrowseName="ReceiveTime" ParentNodeId="ns=1;i=642" DataType="i=294">
+    <DisplayName>ReceiveTime</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=642</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=650" BrowseName="Message" ParentNodeId="ns=1;i=642" DataType="LocalizedText">
+    <DisplayName>Message</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=642</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=651" BrowseName="Severity" ParentNodeId="ns=1;i=642" DataType="UInt16">
+    <DisplayName>Severity</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=642</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=652" BrowseName="ConditionClassId" ParentNodeId="ns=1;i=642" DataType="NodeId">
+    <DisplayName>ConditionClassId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=642</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=653" BrowseName="ConditionClassName" ParentNodeId="ns=1;i=642" DataType="LocalizedText">
+    <DisplayName>ConditionClassName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=642</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=656" BrowseName="ConditionName" ParentNodeId="ns=1;i=642" DataType="String">
+    <DisplayName>ConditionName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=642</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=657" BrowseName="BranchId" ParentNodeId="ns=1;i=642" DataType="NodeId">
+    <DisplayName>BranchId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=642</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=658" BrowseName="Retain" ParentNodeId="ns=1;i=642" DataType="Boolean">
+    <DisplayName>Retain</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=642</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=659" BrowseName="EnabledState" ParentNodeId="ns=1;i=642" DataType="LocalizedText">
+    <DisplayName>EnabledState</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=660</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=8995</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=642</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=660" BrowseName="Id" ParentNodeId="ns=1;i=659" DataType="Boolean">
+    <DisplayName>Id</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=659</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=668" BrowseName="Quality" ParentNodeId="ns=1;i=642" DataType="StatusCode">
+    <DisplayName>Quality</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=669</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=9002</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=642</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=669" BrowseName="SourceTimestamp" ParentNodeId="ns=1;i=668" DataType="i=294">
+    <DisplayName>SourceTimestamp</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=668</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=670" BrowseName="LastSeverity" ParentNodeId="ns=1;i=642" DataType="UInt16">
+    <DisplayName>LastSeverity</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=671</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=9002</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=642</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=671" BrowseName="SourceTimestamp" ParentNodeId="ns=1;i=670" DataType="i=294">
+    <DisplayName>SourceTimestamp</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=670</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=672" BrowseName="Comment" ParentNodeId="ns=1;i=642" DataType="LocalizedText">
+    <DisplayName>Comment</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=673</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=9002</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=642</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=673" BrowseName="SourceTimestamp" ParentNodeId="ns=1;i=672" DataType="i=294">
+    <DisplayName>SourceTimestamp</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=672</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=674" BrowseName="ClientUserId" ParentNodeId="ns=1;i=642" DataType="String">
+    <DisplayName>ClientUserId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=642</Reference>
+    </References>
+  </UAVariable>
+  <UAMethod NodeId="ns=1;i=675" BrowseName="Disable" ParentNodeId="ns=1;i=642" MethodDeclarationId="i=9028">
+    <DisplayName>Disable</DisplayName>
+    <References>
+      <Reference ReferenceType="i=3065">i=2803</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=642</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=676" BrowseName="Enable" ParentNodeId="ns=1;i=642" MethodDeclarationId="i=9027">
+    <DisplayName>Enable</DisplayName>
+    <References>
+      <Reference ReferenceType="i=3065">i=2803</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=642</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=677" BrowseName="AddComment" ParentNodeId="ns=1;i=642" MethodDeclarationId="i=9029">
+    <DisplayName>AddComment</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=678</Reference>
+      <Reference ReferenceType="i=3065">i=2829</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=642</Reference>
+    </References>
+  </UAMethod>
+  <UAVariable NodeId="ns=1;i=678" BrowseName="InputArguments" ParentNodeId="ns=1;i=677" DataType="i=296" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>InputArguments</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=677</Reference>
+    </References>
+    <Value>
+      <ListOfExtensionObject xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>EventId</Name>
+              <DataType>
+                <Identifier>i=15</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+              <Description>
+                <Text>The identifier for the event to comment.</Text>
+              </Description>
+            </Argument>
+          </Body>
+        </ExtensionObject>
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>Comment</Name>
+              <DataType>
+                <Identifier>i=21</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+              <Description>
+                <Text>The comment to add to the condition.</Text>
+              </Description>
+            </Argument>
+          </Body>
+        </ExtensionObject>
+      </ListOfExtensionObject>
+    </Value>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=679" BrowseName="1:CriticalCondition" ParentNodeId="ns=1;i=17">
+    <DisplayName>CriticalCondition</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=680</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=681</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=682</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=683</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=684</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=685</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=687</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=688</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=689</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=690</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=693</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=694</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=695</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=696</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=705</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=707</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=709</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=711</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=712</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=713</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=714</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2782</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=17</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=680" BrowseName="EventId" ParentNodeId="ns=1;i=679" DataType="ByteString">
+    <DisplayName>EventId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=679</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=681" BrowseName="EventType" ParentNodeId="ns=1;i=679" DataType="NodeId">
+    <DisplayName>EventType</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=679</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=682" BrowseName="SourceNode" ParentNodeId="ns=1;i=679" DataType="NodeId">
+    <DisplayName>SourceNode</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=679</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=683" BrowseName="SourceName" ParentNodeId="ns=1;i=679" DataType="String">
+    <DisplayName>SourceName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=679</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=684" BrowseName="Time" ParentNodeId="ns=1;i=679" DataType="i=294">
+    <DisplayName>Time</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=679</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=685" BrowseName="ReceiveTime" ParentNodeId="ns=1;i=679" DataType="i=294">
+    <DisplayName>ReceiveTime</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=679</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=687" BrowseName="Message" ParentNodeId="ns=1;i=679" DataType="LocalizedText">
+    <DisplayName>Message</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=679</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=688" BrowseName="Severity" ParentNodeId="ns=1;i=679" DataType="UInt16">
+    <DisplayName>Severity</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=679</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=689" BrowseName="ConditionClassId" ParentNodeId="ns=1;i=679" DataType="NodeId">
+    <DisplayName>ConditionClassId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=679</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=690" BrowseName="ConditionClassName" ParentNodeId="ns=1;i=679" DataType="LocalizedText">
+    <DisplayName>ConditionClassName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=679</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=693" BrowseName="ConditionName" ParentNodeId="ns=1;i=679" DataType="String">
+    <DisplayName>ConditionName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=679</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=694" BrowseName="BranchId" ParentNodeId="ns=1;i=679" DataType="NodeId">
+    <DisplayName>BranchId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=679</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=695" BrowseName="Retain" ParentNodeId="ns=1;i=679" DataType="Boolean">
+    <DisplayName>Retain</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=679</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=696" BrowseName="EnabledState" ParentNodeId="ns=1;i=679" DataType="LocalizedText">
+    <DisplayName>EnabledState</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=697</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=8995</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=679</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=697" BrowseName="Id" ParentNodeId="ns=1;i=696" DataType="Boolean">
+    <DisplayName>Id</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=696</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=705" BrowseName="Quality" ParentNodeId="ns=1;i=679" DataType="StatusCode">
+    <DisplayName>Quality</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=706</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=9002</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=679</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=706" BrowseName="SourceTimestamp" ParentNodeId="ns=1;i=705" DataType="i=294">
+    <DisplayName>SourceTimestamp</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=705</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=707" BrowseName="LastSeverity" ParentNodeId="ns=1;i=679" DataType="UInt16">
+    <DisplayName>LastSeverity</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=708</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=9002</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=679</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=708" BrowseName="SourceTimestamp" ParentNodeId="ns=1;i=707" DataType="i=294">
+    <DisplayName>SourceTimestamp</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=707</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=709" BrowseName="Comment" ParentNodeId="ns=1;i=679" DataType="LocalizedText">
+    <DisplayName>Comment</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=710</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=9002</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=679</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=710" BrowseName="SourceTimestamp" ParentNodeId="ns=1;i=709" DataType="i=294">
+    <DisplayName>SourceTimestamp</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=709</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=711" BrowseName="ClientUserId" ParentNodeId="ns=1;i=679" DataType="String">
+    <DisplayName>ClientUserId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=679</Reference>
+    </References>
+  </UAVariable>
+  <UAMethod NodeId="ns=1;i=712" BrowseName="Disable" ParentNodeId="ns=1;i=679" MethodDeclarationId="i=9028">
+    <DisplayName>Disable</DisplayName>
+    <References>
+      <Reference ReferenceType="i=3065">i=2803</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=679</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=713" BrowseName="Enable" ParentNodeId="ns=1;i=679" MethodDeclarationId="i=9027">
+    <DisplayName>Enable</DisplayName>
+    <References>
+      <Reference ReferenceType="i=3065">i=2803</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=679</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=714" BrowseName="AddComment" ParentNodeId="ns=1;i=679" MethodDeclarationId="i=9029">
+    <DisplayName>AddComment</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=715</Reference>
+      <Reference ReferenceType="i=3065">i=2829</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=679</Reference>
+    </References>
+  </UAMethod>
+  <UAVariable NodeId="ns=1;i=715" BrowseName="InputArguments" ParentNodeId="ns=1;i=714" DataType="i=296" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>InputArguments</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasModellingRule">i=78</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=714</Reference>
+    </References>
+    <Value>
+      <ListOfExtensionObject xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>EventId</Name>
+              <DataType>
+                <Identifier>i=15</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+              <Description>
+                <Text>The identifier for the event to comment.</Text>
+              </Description>
+            </Argument>
+          </Body>
+        </ExtensionObject>
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>Comment</Name>
+              <DataType>
+                <Identifier>i=21</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+              <Description>
+                <Text>The comment to add to the condition.</Text>
+              </Description>
+            </Argument>
+          </Body>
+        </ExtensionObject>
+      </ListOfExtensionObject>
+    </Value>
+  </UAVariable>
   <UAObject NodeId="ns=1;i=35" BrowseName="1:Home Control System" SymbolicName="HomeControlSystem1" EventNotifier="1">
     <DisplayName>Home Control System</DisplayName>
     <References>
       <Reference ReferenceType="HasComponent">ns=1;i=36</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=716</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=753</Reference>
       <Reference ReferenceType="HasNotifier">ns=1;i=36</Reference>
       <Reference ReferenceType="Organizes" IsForward="false">i=85</Reference>
       <Reference ReferenceType="HasTypeDefinition">ns=1;i=17</Reference>
@@ -143,12 +1592,14 @@
     <References>
       <Reference ReferenceType="HasComponent">ns=1;i=37</Reference>
       <Reference ReferenceType="HasProperty">ns=1;i=43</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=46</Reference>
       <Reference ReferenceType="HasNotifier" IsForward="false">ns=1;i=35</Reference>
+      <Reference ReferenceType="HasNotifier">ns=1;i=46</Reference>
       <Reference ReferenceType="HasTypeDefinition">ns=1;i=9</Reference>
       <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=35</Reference>
     </References>
   </UAObject>
-  <UAVariable NodeId="ns=1;i=37" BrowseName="1:Output" ParentNodeId="ns=1;i=36" DataType="Double">
+  <UAVariable NodeId="ns=1;i=37" BrowseName="1:Output" ParentNodeId="ns=1;i=36" DataType="Double" AccessLevel="3" Historizing="true">
     <DisplayName>Output</DisplayName>
     <References>
       <Reference ReferenceType="HasProperty">ns=1;i=41</Reference>
@@ -169,5 +1620,907 @@
       <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
       <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=36</Reference>
     </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=46" BrowseName="1:TempCritical" SymbolicName="TemperatureCritical" ParentNodeId="ns=1;i=36">
+    <DisplayName>TempCritical</DisplayName>
+    <Description>Critical conditon of the temperature.</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=331</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=332</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=333</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=334</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=335</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=336</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=338</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=339</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=340</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=341</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=344</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=345</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=346</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=347</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=356</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=358</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=360</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=362</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=363</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=364</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=365</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=367</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=385</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=389</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=398</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=436</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=478</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=483</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=484</Reference>
+      <Reference ReferenceType="HasNotifier" IsForward="false">ns=1;i=36</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=1;i=491</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=36</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=331" BrowseName="EventId" ParentNodeId="ns=1;i=46" DataType="ByteString">
+    <DisplayName>EventId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=332" BrowseName="EventType" ParentNodeId="ns=1;i=46" DataType="NodeId">
+    <DisplayName>EventType</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=333" BrowseName="SourceNode" ParentNodeId="ns=1;i=46" DataType="NodeId">
+    <DisplayName>SourceNode</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=334" BrowseName="SourceName" ParentNodeId="ns=1;i=46" DataType="String">
+    <DisplayName>SourceName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=335" BrowseName="Time" ParentNodeId="ns=1;i=46" DataType="i=294">
+    <DisplayName>Time</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=336" BrowseName="ReceiveTime" ParentNodeId="ns=1;i=46" DataType="i=294">
+    <DisplayName>ReceiveTime</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=338" BrowseName="Message" ParentNodeId="ns=1;i=46" DataType="LocalizedText">
+    <DisplayName>Message</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=339" BrowseName="Severity" ParentNodeId="ns=1;i=46" DataType="UInt16">
+    <DisplayName>Severity</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=340" BrowseName="ConditionClassId" ParentNodeId="ns=1;i=46" DataType="NodeId">
+    <DisplayName>ConditionClassId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=341" BrowseName="ConditionClassName" ParentNodeId="ns=1;i=46" DataType="LocalizedText">
+    <DisplayName>ConditionClassName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=344" BrowseName="ConditionName" ParentNodeId="ns=1;i=46" DataType="String">
+    <DisplayName>ConditionName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=345" BrowseName="BranchId" ParentNodeId="ns=1;i=46" DataType="NodeId">
+    <DisplayName>BranchId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=346" BrowseName="Retain" ParentNodeId="ns=1;i=46" DataType="Boolean">
+    <DisplayName>Retain</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=347" BrowseName="EnabledState" ParentNodeId="ns=1;i=46" DataType="LocalizedText">
+    <DisplayName>EnabledState</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=348</Reference>
+      <Reference ReferenceType="i=9004">ns=1;i=367</Reference>
+      <Reference ReferenceType="i=9004">ns=1;i=376</Reference>
+      <Reference ReferenceType="i=9004">ns=1;i=389</Reference>
+      <Reference ReferenceType="i=9004">ns=1;i=399</Reference>
+      <Reference ReferenceType="i=9004">ns=1;i=417</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=8995</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=348" BrowseName="Id" ParentNodeId="ns=1;i=347" DataType="Boolean">
+    <DisplayName>Id</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=347</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=356" BrowseName="Quality" ParentNodeId="ns=1;i=46" DataType="StatusCode">
+    <DisplayName>Quality</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=357</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=9002</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=357" BrowseName="SourceTimestamp" ParentNodeId="ns=1;i=356" DataType="i=294">
+    <DisplayName>SourceTimestamp</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=356</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=358" BrowseName="LastSeverity" ParentNodeId="ns=1;i=46" DataType="UInt16">
+    <DisplayName>LastSeverity</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=359</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=9002</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=359" BrowseName="SourceTimestamp" ParentNodeId="ns=1;i=358" DataType="i=294">
+    <DisplayName>SourceTimestamp</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=358</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=360" BrowseName="Comment" ParentNodeId="ns=1;i=46" DataType="LocalizedText">
+    <DisplayName>Comment</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=361</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=9002</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=361" BrowseName="SourceTimestamp" ParentNodeId="ns=1;i=360" DataType="i=294">
+    <DisplayName>SourceTimestamp</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=360</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=362" BrowseName="ClientUserId" ParentNodeId="ns=1;i=46" DataType="String">
+    <DisplayName>ClientUserId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAMethod NodeId="ns=1;i=363" BrowseName="Disable" ParentNodeId="ns=1;i=46" MethodDeclarationId="i=9028">
+    <DisplayName>Disable</DisplayName>
+    <References>
+      <Reference ReferenceType="i=3065">i=2803</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=364" BrowseName="Enable" ParentNodeId="ns=1;i=46" MethodDeclarationId="i=9027">
+    <DisplayName>Enable</DisplayName>
+    <References>
+      <Reference ReferenceType="i=3065">i=2803</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=365" BrowseName="AddComment" ParentNodeId="ns=1;i=46" MethodDeclarationId="i=9029">
+    <DisplayName>AddComment</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=366</Reference>
+      <Reference ReferenceType="i=3065">i=2829</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAMethod>
+  <UAVariable NodeId="ns=1;i=366" BrowseName="InputArguments" ParentNodeId="ns=1;i=365" DataType="i=296" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>InputArguments</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=365</Reference>
+    </References>
+    <Value>
+      <ListOfExtensionObject xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>EventId</Name>
+              <DataType>
+                <Identifier>i=15</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+              <Description>
+                <Text>The identifier for the event to comment.</Text>
+              </Description>
+            </Argument>
+          </Body>
+        </ExtensionObject>
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>Comment</Name>
+              <DataType>
+                <Identifier>i=21</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+              <Description>
+                <Text>The comment to add to the condition.</Text>
+              </Description>
+            </Argument>
+          </Body>
+        </ExtensionObject>
+      </ListOfExtensionObject>
+    </Value>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=367" BrowseName="AckedState" ParentNodeId="ns=1;i=46" DataType="LocalizedText">
+    <DisplayName>AckedState</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=368</Reference>
+      <Reference ReferenceType="i=9004" IsForward="false">ns=1;i=347</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=8995</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=368" BrowseName="Id" ParentNodeId="ns=1;i=367" DataType="Boolean">
+    <DisplayName>Id</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=367</Reference>
+    </References>
+  </UAVariable>
+  <UAMethod NodeId="ns=1;i=385" BrowseName="Acknowledge" ParentNodeId="ns=1;i=46" MethodDeclarationId="i=9111">
+    <DisplayName>Acknowledge</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=386</Reference>
+      <Reference ReferenceType="i=3065">i=8944</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAMethod>
+  <UAVariable NodeId="ns=1;i=386" BrowseName="InputArguments" ParentNodeId="ns=1;i=385" DataType="i=296" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>InputArguments</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=385</Reference>
+    </References>
+    <Value>
+      <ListOfExtensionObject xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>EventId</Name>
+              <DataType>
+                <Identifier>i=15</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+              <Description>
+                <Text>The identifier for the event to comment.</Text>
+              </Description>
+            </Argument>
+          </Body>
+        </ExtensionObject>
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>Comment</Name>
+              <DataType>
+                <Identifier>i=21</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+              <Description>
+                <Text>The comment to add to the condition.</Text>
+              </Description>
+            </Argument>
+          </Body>
+        </ExtensionObject>
+      </ListOfExtensionObject>
+    </Value>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=389" BrowseName="ActiveState" ParentNodeId="ns=1;i=46" DataType="LocalizedText">
+    <DisplayName>ActiveState</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=390</Reference>
+      <Reference ReferenceType="i=9004" IsForward="false">ns=1;i=347</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=8995</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=390" BrowseName="Id" ParentNodeId="ns=1;i=389" DataType="Boolean">
+    <DisplayName>Id</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=389</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=398" BrowseName="InputNode" ParentNodeId="ns=1;i=46" DataType="NodeId">
+    <DisplayName>InputNode</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=436" BrowseName="SuppressedOrShelved" ParentNodeId="ns=1;i=46" DataType="Boolean">
+    <DisplayName>SuppressedOrShelved</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=478" BrowseName="1:IsAveragePerMonth" ParentNodeId="ns=1;i=46" DataType="Boolean">
+    <DisplayName>IsAveragePerMonth</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=483" BrowseName="1:MyName" ParentNodeId="ns=1;i=46" DataType="String">
+    <DisplayName>MyName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=484" BrowseName="1:MyNumber" ParentNodeId="ns=1;i=46" DataType="Double">
+    <DisplayName>MyNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=46</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=716" BrowseName="1:NormalCondition" ParentNodeId="ns=1;i=35">
+    <DisplayName>NormalCondition</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=717</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=718</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=719</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=720</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=721</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=722</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=724</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=725</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=726</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=727</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=730</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=731</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=732</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=733</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=742</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=744</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=746</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=748</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=749</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=750</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=751</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2782</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=35</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=717" BrowseName="EventId" ParentNodeId="ns=1;i=716" DataType="ByteString">
+    <DisplayName>EventId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=716</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=718" BrowseName="EventType" ParentNodeId="ns=1;i=716" DataType="NodeId">
+    <DisplayName>EventType</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=716</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=719" BrowseName="SourceNode" ParentNodeId="ns=1;i=716" DataType="NodeId">
+    <DisplayName>SourceNode</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=716</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=720" BrowseName="SourceName" ParentNodeId="ns=1;i=716" DataType="String">
+    <DisplayName>SourceName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=716</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=721" BrowseName="Time" ParentNodeId="ns=1;i=716" DataType="i=294">
+    <DisplayName>Time</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=716</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=722" BrowseName="ReceiveTime" ParentNodeId="ns=1;i=716" DataType="i=294">
+    <DisplayName>ReceiveTime</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=716</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=724" BrowseName="Message" ParentNodeId="ns=1;i=716" DataType="LocalizedText">
+    <DisplayName>Message</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=716</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=725" BrowseName="Severity" ParentNodeId="ns=1;i=716" DataType="UInt16">
+    <DisplayName>Severity</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=716</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=726" BrowseName="ConditionClassId" ParentNodeId="ns=1;i=716" DataType="NodeId">
+    <DisplayName>ConditionClassId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=716</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=727" BrowseName="ConditionClassName" ParentNodeId="ns=1;i=716" DataType="LocalizedText">
+    <DisplayName>ConditionClassName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=716</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=730" BrowseName="ConditionName" ParentNodeId="ns=1;i=716" DataType="String">
+    <DisplayName>ConditionName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=716</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=731" BrowseName="BranchId" ParentNodeId="ns=1;i=716" DataType="NodeId">
+    <DisplayName>BranchId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=716</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=732" BrowseName="Retain" ParentNodeId="ns=1;i=716" DataType="Boolean">
+    <DisplayName>Retain</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=716</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=733" BrowseName="EnabledState" ParentNodeId="ns=1;i=716" DataType="LocalizedText">
+    <DisplayName>EnabledState</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=734</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=8995</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=716</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=734" BrowseName="Id" ParentNodeId="ns=1;i=733" DataType="Boolean">
+    <DisplayName>Id</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=733</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=742" BrowseName="Quality" ParentNodeId="ns=1;i=716" DataType="StatusCode">
+    <DisplayName>Quality</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=743</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=9002</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=716</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=743" BrowseName="SourceTimestamp" ParentNodeId="ns=1;i=742" DataType="i=294">
+    <DisplayName>SourceTimestamp</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=742</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=744" BrowseName="LastSeverity" ParentNodeId="ns=1;i=716" DataType="UInt16">
+    <DisplayName>LastSeverity</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=745</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=9002</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=716</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=745" BrowseName="SourceTimestamp" ParentNodeId="ns=1;i=744" DataType="i=294">
+    <DisplayName>SourceTimestamp</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=744</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=746" BrowseName="Comment" ParentNodeId="ns=1;i=716" DataType="LocalizedText">
+    <DisplayName>Comment</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=747</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=9002</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=716</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=747" BrowseName="SourceTimestamp" ParentNodeId="ns=1;i=746" DataType="i=294">
+    <DisplayName>SourceTimestamp</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=746</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=748" BrowseName="ClientUserId" ParentNodeId="ns=1;i=716" DataType="String">
+    <DisplayName>ClientUserId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=716</Reference>
+    </References>
+  </UAVariable>
+  <UAMethod NodeId="ns=1;i=749" BrowseName="Disable" ParentNodeId="ns=1;i=716" MethodDeclarationId="i=9028">
+    <DisplayName>Disable</DisplayName>
+    <References>
+      <Reference ReferenceType="i=3065">i=2803</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=716</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=750" BrowseName="Enable" ParentNodeId="ns=1;i=716" MethodDeclarationId="i=9027">
+    <DisplayName>Enable</DisplayName>
+    <References>
+      <Reference ReferenceType="i=3065">i=2803</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=716</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=751" BrowseName="AddComment" ParentNodeId="ns=1;i=716" MethodDeclarationId="i=9029">
+    <DisplayName>AddComment</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=752</Reference>
+      <Reference ReferenceType="i=3065">i=2829</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=716</Reference>
+    </References>
+  </UAMethod>
+  <UAVariable NodeId="ns=1;i=752" BrowseName="InputArguments" ParentNodeId="ns=1;i=751" DataType="i=296" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>InputArguments</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=751</Reference>
+    </References>
+    <Value>
+      <ListOfExtensionObject xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>EventId</Name>
+              <DataType>
+                <Identifier>i=15</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+              <Description>
+                <Text>The identifier for the event to comment.</Text>
+              </Description>
+            </Argument>
+          </Body>
+        </ExtensionObject>
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>Comment</Name>
+              <DataType>
+                <Identifier>i=21</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+              <Description>
+                <Text>The comment to add to the condition.</Text>
+              </Description>
+            </Argument>
+          </Body>
+        </ExtensionObject>
+      </ListOfExtensionObject>
+    </Value>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=753" BrowseName="1:CriticalCondition" ParentNodeId="ns=1;i=35">
+    <DisplayName>CriticalCondition</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=754</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=755</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=756</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=757</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=758</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=759</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=761</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=762</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=763</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=764</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=767</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=768</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=769</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=770</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=779</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=781</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=783</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=785</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=786</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=787</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=788</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2782</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=35</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=754" BrowseName="EventId" ParentNodeId="ns=1;i=753" DataType="ByteString">
+    <DisplayName>EventId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=753</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=755" BrowseName="EventType" ParentNodeId="ns=1;i=753" DataType="NodeId">
+    <DisplayName>EventType</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=753</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=756" BrowseName="SourceNode" ParentNodeId="ns=1;i=753" DataType="NodeId">
+    <DisplayName>SourceNode</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=753</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=757" BrowseName="SourceName" ParentNodeId="ns=1;i=753" DataType="String">
+    <DisplayName>SourceName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=753</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=758" BrowseName="Time" ParentNodeId="ns=1;i=753" DataType="i=294">
+    <DisplayName>Time</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=753</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=759" BrowseName="ReceiveTime" ParentNodeId="ns=1;i=753" DataType="i=294">
+    <DisplayName>ReceiveTime</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=753</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=761" BrowseName="Message" ParentNodeId="ns=1;i=753" DataType="LocalizedText">
+    <DisplayName>Message</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=753</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=762" BrowseName="Severity" ParentNodeId="ns=1;i=753" DataType="UInt16">
+    <DisplayName>Severity</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=753</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=763" BrowseName="ConditionClassId" ParentNodeId="ns=1;i=753" DataType="NodeId">
+    <DisplayName>ConditionClassId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=753</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=764" BrowseName="ConditionClassName" ParentNodeId="ns=1;i=753" DataType="LocalizedText">
+    <DisplayName>ConditionClassName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=753</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=767" BrowseName="ConditionName" ParentNodeId="ns=1;i=753" DataType="String">
+    <DisplayName>ConditionName</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=753</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=768" BrowseName="BranchId" ParentNodeId="ns=1;i=753" DataType="NodeId">
+    <DisplayName>BranchId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=753</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=769" BrowseName="Retain" ParentNodeId="ns=1;i=753" DataType="Boolean">
+    <DisplayName>Retain</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=753</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=770" BrowseName="EnabledState" ParentNodeId="ns=1;i=753" DataType="LocalizedText">
+    <DisplayName>EnabledState</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=771</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=8995</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=753</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=771" BrowseName="Id" ParentNodeId="ns=1;i=770" DataType="Boolean">
+    <DisplayName>Id</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=770</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=779" BrowseName="Quality" ParentNodeId="ns=1;i=753" DataType="StatusCode">
+    <DisplayName>Quality</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=780</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=9002</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=753</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=780" BrowseName="SourceTimestamp" ParentNodeId="ns=1;i=779" DataType="i=294">
+    <DisplayName>SourceTimestamp</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=779</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=781" BrowseName="LastSeverity" ParentNodeId="ns=1;i=753" DataType="UInt16">
+    <DisplayName>LastSeverity</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=782</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=9002</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=753</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=782" BrowseName="SourceTimestamp" ParentNodeId="ns=1;i=781" DataType="i=294">
+    <DisplayName>SourceTimestamp</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=781</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=783" BrowseName="Comment" ParentNodeId="ns=1;i=753" DataType="LocalizedText">
+    <DisplayName>Comment</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=784</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=9002</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=753</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=784" BrowseName="SourceTimestamp" ParentNodeId="ns=1;i=783" DataType="i=294">
+    <DisplayName>SourceTimestamp</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=783</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=785" BrowseName="ClientUserId" ParentNodeId="ns=1;i=753" DataType="String">
+    <DisplayName>ClientUserId</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=753</Reference>
+    </References>
+  </UAVariable>
+  <UAMethod NodeId="ns=1;i=786" BrowseName="Disable" ParentNodeId="ns=1;i=753" MethodDeclarationId="i=9028">
+    <DisplayName>Disable</DisplayName>
+    <References>
+      <Reference ReferenceType="i=3065">i=2803</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=753</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=787" BrowseName="Enable" ParentNodeId="ns=1;i=753" MethodDeclarationId="i=9027">
+    <DisplayName>Enable</DisplayName>
+    <References>
+      <Reference ReferenceType="i=3065">i=2803</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=753</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=788" BrowseName="AddComment" ParentNodeId="ns=1;i=753" MethodDeclarationId="i=9029">
+    <DisplayName>AddComment</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=789</Reference>
+      <Reference ReferenceType="i=3065">i=2829</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=753</Reference>
+    </References>
+  </UAMethod>
+  <UAVariable NodeId="ns=1;i=789" BrowseName="InputArguments" ParentNodeId="ns=1;i=788" DataType="i=296" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>InputArguments</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=788</Reference>
+    </References>
+    <Value>
+      <ListOfExtensionObject xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>EventId</Name>
+              <DataType>
+                <Identifier>i=15</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+              <Description>
+                <Text>The identifier for the event to comment.</Text>
+              </Description>
+            </Argument>
+          </Body>
+        </ExtensionObject>
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>Comment</Name>
+              <DataType>
+                <Identifier>i=21</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+              <Description>
+                <Text>The comment to add to the condition.</Text>
+              </Description>
+            </Argument>
+          </Body>
+        </ExtensionObject>
+      </ListOfExtensionObject>
+    </Value>
   </UAVariable>
 </UANodeSet>

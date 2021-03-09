@@ -17,19 +17,45 @@ TargetNamespace="http://opcfoundation.org/HomeControlSystem"
     <opc:ObjectType SymbolicName="GenericSensorType" BaseType="ua:BaseObjectType">
         <opc:Description>A generic sensor that reads a process value.</opc:Description>
         <opc:Children>
-            <opc:Variable SymbolicName="Output" DataType="ua:Double" ValueRank="Scalar" TypeDefinition="ua:AnalogItemType" />
+            <opc:Variable SymbolicName="Output" DataType="ua:Double" ValueRank="Scalar" TypeDefinition="ua:AnalogItemType" Historizing="1" AccessLevel="ReadWrite" />
             <opc:Property SymbolicName="Units" DataType="ua:String" ValueRank="Scalar" AccessLevel="ReadWrite" />
+        </opc:Children>
+    </opc:ObjectType>
+    
+    <opc:ObjectType SymbolicName="TemperatureCriticalType" BaseType="ua:DiscreteAlarmType">
+        <opc:Children>
+            <opc:Property SymbolicName="IsAveragePerMonth" BrowseName="IsAveragePerMonth" DataType="ua:Boolean" ValueRank="Scalar" />
+            <opc:Property SymbolicName="MyName" BrowseName="MyName" DataType="ua:String" ValueRank="Scalar" />
+            <opc:Property SymbolicName="MyNumber" BrowseName="MyNumber" DataType="ua:Double" ValueRank="Scalar" />
         </opc:Children>
     </opc:ObjectType>
 
     <opc:ObjectType SymbolicName="TemperatureSensorType" BaseType="GenericSensorType">
         <opc:Description>A sensor that reports the temperature of a measured object.</opc:Description>
+        <opc:Children>
+            <opc:Object SymbolicName="TemperatureCritical" TypeDefinition="TemperatureCriticalType">
+                <opc:BrowseName>TempCritical</opc:BrowseName>
+                <opc:Description>Critical conditon of the temperature.</opc:Description>
+            </opc:Object>
+        </opc:Children>
+        <opc:References>
+            <opc:Reference>
+                <opc:ReferenceType>ua:HasNotifier</opc:ReferenceType>
+                <opc:TargetId>TemperatureSensorType_TemperatureCritical</opc:TargetId>
+            </opc:Reference>
+        </opc:References>
     </opc:ObjectType>
 
     <opc:ObjectType SymbolicName="HomeControlSystemType" BaseType="ua:FolderType">
         <opc:Children>
             <opc:Object SymbolicName="TemperatureSensor" TypeDefinition="TemperatureSensorType" SupportsEvents="true">
                 <opc:BrowseName>TS001</opc:BrowseName>
+            </opc:Object>
+            <opc:Object SymbolicName="NormalCondition" TypeDefinition="ua:ConditionType">
+                <opc:BrowseName>NormalCondition</opc:BrowseName>
+            </opc:Object>
+            <opc:Object SymbolicName="CriticalCondition" TypeDefinition="ua:ConditionType">
+                <opc:BrowseName>CriticalCondition</opc:BrowseName>
             </opc:Object>
         </opc:Children>
         <opc:References>
@@ -42,11 +68,6 @@ TargetNamespace="http://opcfoundation.org/HomeControlSystem"
     
     <opc:Object SymbolicName="HomeControlSystem1" TypeDefinition="HomeControlSystemType" SupportsEvents="true">
         <opc:BrowseName>Home Control System</opc:BrowseName>
-        <opc:Children>
-            <opc:Object SymbolicName="TemperatureSensor" TypeDefinition="TemperatureSensorType" SupportsEvents="true">
-                <opc:DisplayName>TS001</opc:DisplayName>
-            </opc:Object>
-        </opc:Children>
         <opc:References>
             <opc:Reference IsInverse="true">
                 <opc:ReferenceType>ua:Organizes</opc:ReferenceType>

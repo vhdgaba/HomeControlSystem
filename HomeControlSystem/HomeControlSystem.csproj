@@ -222,14 +222,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HomeControlSystem.Classes.cs" />
-    <Compile Include="HomeControlSystemNodeManager.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="HomeControlSystem.Classes.cs" />
+    <Compile Include="HomeControlSystemNodeManager.cs" />
     <Compile Include="HomeControlSystemServer.cs" />
     <Compile Include="HomeControlSystemServerConfiguration.cs" />
     <Compile Include="Program.cs" />
@@ -246,6 +246,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="bin\Debug\HomeControlSystem.exe.config" />
     <None Include="HomeControlSystem.NodeIds.csv" />
     <None Include="HomeControlSystem.PredefinedNodes.uanodes" />
     <None Include="HomeControlSystem.Types.bsd" />
@@ -268,11 +269,124 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\BouncyCastle.Crypto.dll" />
+    <Content Include="bin\Debug\BouncyCastle.Crypto.xml" />
+    <Content Include="bin\Debug\HomeControlSystem.exe" />
+    <Content Include="bin\Debug\HomeControlSystem.pdb" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Connections.Abstractions.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Connections.Abstractions.xml" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Hosting.Abstractions.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Hosting.Abstractions.xml" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Hosting.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Hosting.xml" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Http.Abstractions.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Http.Abstractions.xml" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Http.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Http.Extensions.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Http.Extensions.xml" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Http.Features.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Http.Features.xml" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Http.xml" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Server.Kestrel.Core.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Server.Kestrel.Core.xml" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Server.Kestrel.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Server.Kestrel.Https.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Server.Kestrel.Https.xml" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.xml" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.xml" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.Server.Kestrel.xml" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.WebUtilities.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNetCore.WebUtilities.xml" />
+    <Content Include="bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll" />
+    <Content Include="bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml" />
+    <Content Include="bin\Debug\Microsoft.Extensions.Configuration.Binder.dll" />
+    <Content Include="bin\Debug\Microsoft.Extensions.Configuration.Binder.xml" />
+    <Content Include="bin\Debug\Microsoft.Extensions.Configuration.dll" />
+    <Content Include="bin\Debug\Microsoft.Extensions.Configuration.EnvironmentVariables.dll" />
+    <Content Include="bin\Debug\Microsoft.Extensions.Configuration.EnvironmentVariables.xml" />
+    <Content Include="bin\Debug\Microsoft.Extensions.Configuration.FileExtensions.dll" />
+    <Content Include="bin\Debug\Microsoft.Extensions.Configuration.FileExtensions.xml" />
+    <Content Include="bin\Debug\Microsoft.Extensions.Configuration.xml" />
+    <Content Include="bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <Content Include="bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml" />
+    <Content Include="bin\Debug\Microsoft.Extensions.DependencyInjection.dll" />
+    <Content Include="bin\Debug\Microsoft.Extensions.DependencyInjection.xml" />
+    <Content Include="bin\Debug\Microsoft.Extensions.FileProviders.Abstractions.dll" />
+    <Content Include="bin\Debug\Microsoft.Extensions.FileProviders.Abstractions.xml" />
+    <Content Include="bin\Debug\Microsoft.Extensions.FileProviders.Physical.dll" />
+    <Content Include="bin\Debug\Microsoft.Extensions.FileProviders.Physical.xml" />
+    <Content Include="bin\Debug\Microsoft.Extensions.FileSystemGlobbing.dll" />
+    <Content Include="bin\Debug\Microsoft.Extensions.FileSystemGlobbing.xml" />
+    <Content Include="bin\Debug\Microsoft.Extensions.Hosting.Abstractions.dll" />
+    <Content Include="bin\Debug\Microsoft.Extensions.Hosting.Abstractions.xml" />
+    <Content Include="bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll" />
+    <Content Include="bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml" />
+    <Content Include="bin\Debug\Microsoft.Extensions.Logging.dll" />
+    <Content Include="bin\Debug\Microsoft.Extensions.Logging.xml" />
+    <Content Include="bin\Debug\Microsoft.Extensions.ObjectPool.dll" />
+    <Content Include="bin\Debug\Microsoft.Extensions.ObjectPool.xml" />
+    <Content Include="bin\Debug\Microsoft.Extensions.Options.dll" />
+    <Content Include="bin\Debug\Microsoft.Extensions.Options.xml" />
+    <Content Include="bin\Debug\Microsoft.Extensions.Primitives.dll" />
+    <Content Include="bin\Debug\Microsoft.Extensions.Primitives.xml" />
+    <Content Include="bin\Debug\Microsoft.Net.Http.Headers.dll" />
+    <Content Include="bin\Debug\Microsoft.Net.Http.Headers.xml" />
+    <Content Include="bin\Debug\Newtonsoft.Json.dll" />
+    <Content Include="bin\Debug\Newtonsoft.Json.xml" />
+    <Content Include="bin\Debug\Opc.Ua.Bindings.Https.dll" />
+    <Content Include="bin\Debug\Opc.Ua.Bindings.Https.xml" />
+    <Content Include="bin\Debug\Opc.Ua.Client.dll" />
+    <Content Include="bin\Debug\Opc.Ua.Client.xml" />
+    <Content Include="bin\Debug\Opc.Ua.Configuration.dll" />
+    <Content Include="bin\Debug\Opc.Ua.Configuration.xml" />
+    <Content Include="bin\Debug\Opc.Ua.Core.dll" />
+    <Content Include="bin\Debug\Opc.Ua.Core.xml" />
+    <Content Include="bin\Debug\Opc.Ua.Gds.Client.Common.dll" />
+    <Content Include="bin\Debug\Opc.Ua.Gds.Client.Common.xml" />
+    <Content Include="bin\Debug\Opc.Ua.Gds.Server.Common.dll" />
+    <Content Include="bin\Debug\Opc.Ua.Gds.Server.Common.xml" />
+    <Content Include="bin\Debug\Opc.Ua.Security.Certificates.dll" />
+    <Content Include="bin\Debug\Opc.Ua.Security.Certificates.xml" />
+    <Content Include="bin\Debug\Opc.Ua.Server.dll" />
+    <Content Include="bin\Debug\Opc.Ua.Server.xml" />
+    <Content Include="bin\Debug\System.Buffers.dll" />
+    <Content Include="bin\Debug\System.Buffers.xml" />
+    <Content Include="bin\Debug\System.Collections.Immutable.dll" />
+    <Content Include="bin\Debug\System.Collections.Immutable.xml" />
+    <Content Include="bin\Debug\System.ComponentModel.Annotations.dll" />
+    <Content Include="bin\Debug\System.Diagnostics.DiagnosticSource.dll" />
+    <Content Include="bin\Debug\System.Diagnostics.DiagnosticSource.xml" />
+    <Content Include="bin\Debug\System.Formats.Asn1.dll" />
+    <Content Include="bin\Debug\System.Formats.Asn1.xml" />
+    <Content Include="bin\Debug\System.IO.Pipelines.dll" />
+    <Content Include="bin\Debug\System.IO.Pipelines.xml" />
+    <Content Include="bin\Debug\System.Memory.dll" />
+    <Content Include="bin\Debug\System.Memory.xml" />
+    <Content Include="bin\Debug\System.Numerics.Vectors.dll" />
+    <Content Include="bin\Debug\System.Numerics.Vectors.xml" />
+    <Content Include="bin\Debug\System.Reflection.Metadata.dll" />
+    <Content Include="bin\Debug\System.Reflection.Metadata.xml" />
+    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="bin\Debug\System.Security.Cryptography.Cng.dll" />
+    <Content Include="bin\Debug\System.Text.Encodings.Web.dll" />
+    <Content Include="bin\Debug\System.Text.Encodings.Web.xml" />
+    <Content Include="bin\Debug\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="bin\Debug\System.Threading.Tasks.Extensions.xml" />
+    <Content Include="bin\Debug\System.ValueTuple.dll" />
+    <Content Include="bin\Debug\System.ValueTuple.xml" />
     <Content Include="HomeControlSystem.NodeSet.xml" />
     <Content Include="HomeControlSystem.NodeSet2.xml" />
     <Content Include="HomeControlSystem.PredefinedNodes.xml" />
     <Content Include="HomeControlSystemServer.Config.xml" />
     <Content Include="ModelDesign.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
 GenericSensorType,1,ObjectType
 HomeControlSystem1,35,Object
 HomeControlSystemType,17,ObjectType
+TemperatureCriticalType,491,ObjectType
 TemperatureSensorType,9,ObjectType
